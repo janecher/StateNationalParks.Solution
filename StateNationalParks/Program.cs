@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace StateNationalParks
 {
+    #pragma warning disable CS1591
     public class Program
     {
         public static void Main(string[] args)
@@ -21,4 +22,5 @@ namespace StateNationalParks
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
     }
+    #pragma warning disable CS1591
 }
