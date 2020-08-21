@@ -19,6 +19,9 @@ namespace StateNationalParks.Controllers
 
     // GET api/stateparks
     // GET - search by name - api/stateparks/?name=parkName
+    /// <summary>
+    /// Retrieve all state parks, or search by name.
+    /// </summary>
     [HttpGet]
     public ActionResult<IEnumerable<StatePark>> Get(string name)
     {
@@ -32,6 +35,9 @@ namespace StateNationalParks.Controllers
     }
 
     // GET api/stateparks/5
+    /// <summary>
+    /// Retreives a state park by id.
+    /// </summary>
     [HttpGet("{id}")]
     public ActionResult<StatePark> Get(int id)
     {
@@ -39,6 +45,19 @@ namespace StateNationalParks.Controllers
     }
 
     // POST api/stateparks
+    /// <summary>
+    /// Add state park to the database.
+    /// </summary>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     POST /NationalPark
+    ///     {
+    ///        "name": "Deception Pass State Park",
+    ///        "address": "Washington 98277"
+    ///     }
+    ///
+    /// </remarks>
     [HttpPost]
     public void Post([FromBody] StatePark statePark)
     {
@@ -47,6 +66,9 @@ namespace StateNationalParks.Controllers
     }
 
     // PUT api/stateparks/5
+    /// <summary>
+    /// Update a state park by id.
+    /// </summary>
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] StatePark statePark)
     {
@@ -56,6 +78,9 @@ namespace StateNationalParks.Controllers
     }
 
     // DELETE api/stateparks/5
+    /// <summary>
+    /// Removes a state park from the database by id.
+    /// </summary>
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
