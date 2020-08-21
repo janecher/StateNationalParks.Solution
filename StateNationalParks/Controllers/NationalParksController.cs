@@ -18,10 +18,17 @@ namespace StateNationalParks.Controllers
     }
 
     // GET api/nationalparks
+    // GET - search by name - api/stateparks/?name=parkName
     [HttpGet]
-    public ActionResult<IEnumerable<NationalPark>> Get()
+    public ActionResult<IEnumerable<NationalPark>> Get(string name)
     {
-      return _db.NationalParks.ToList();
+      var query = _db.NationalParks.AsQueryable();
+
+      if (name != null)
+      {
+        query = query.Where(entry => entry.Name.Contains(name));
+      }
+      return query.ToList();
     }
 
     // GET api/nationalparks/5
@@ -33,9 +40,9 @@ namespace StateNationalParks.Controllers
 
     // POST api/nationalparks
     [HttpPost]
-    public void Post([FromBody] NationalPark animal)
+    public void Post([FromBody] NationalPark nationalPark)
     {
-      _db.NationalParks.Add(animal);
+      _db.NationalParks.Add(nationalPark);
       _db.SaveChanges();
     }
 

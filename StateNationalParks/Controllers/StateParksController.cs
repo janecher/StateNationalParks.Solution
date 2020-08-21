@@ -18,10 +18,17 @@ namespace StateNationalParks.Controllers
     }
 
     // GET api/stateparks
+    // GET - search by name - api/stateparks/?name=parkName
     [HttpGet]
-    public ActionResult<IEnumerable<StatePark>> Get()
+    public ActionResult<IEnumerable<StatePark>> Get(string name)
     {
-      return _db.StateParks.ToList();
+      var query = _db.StateParks.AsQueryable();
+
+      if (name != null)
+      {
+        query = query.Where(entry => entry.Name.Contains(name));
+      }
+      return query.ToList();
     }
 
     // GET api/stateparks/5
