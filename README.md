@@ -54,6 +54,18 @@ http://localhost:5000/api/nationalparks/?name=rainier
 
 #### Explore API using Swagger Documentation: http://localhost:5000/index.html
 
+#### Using JSON Web Token
+
+In order to authorize to use the POST, PUT, DELETE functionality of API, authenticate yourself through Postman
+
+* Create POST request : http://localhost:5000/api/users/authenticate
+{
+  "username" : "evgeniya chernaya"
+  "password" : "12345"
+}
+
+* Token will be generated in the response. Copy and paste it in the Authorization Tab as the Bearer Token.
+
 ## Known Bugs
 
 _No known bugs_
