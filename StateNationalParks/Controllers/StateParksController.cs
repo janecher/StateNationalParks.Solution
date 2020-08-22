@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using StateNationalParks.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace StateNationalParks.Controllers
 {
@@ -58,6 +59,7 @@ namespace StateNationalParks.Controllers
     ///     }
     ///
     /// </remarks>
+    [Authorize]
     [HttpPost]
     public void Post([FromBody] StatePark statePark)
     {
@@ -69,6 +71,7 @@ namespace StateNationalParks.Controllers
     /// <summary>
     /// Update a state park by id.
     /// </summary>
+    [Authorize]
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] StatePark statePark)
     {
@@ -81,6 +84,7 @@ namespace StateNationalParks.Controllers
     /// <summary>
     /// Removes a state park from the database by id.
     /// </summary>
+    [Authorize]
     [HttpDelete("{id}")]
     public void Delete(int id)
     {

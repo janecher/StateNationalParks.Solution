@@ -34,17 +34,17 @@ This Web API application has all CRUD fucntionality, Swagger documentation and J
 
 * Base URL: http://localhost:5000
  
-GET /api/nationalparks
-GET(id) /api/nationalparks/{id}
-POST /api/nationalparks
-PUT(id) /api/nationalparks/{id}
-DELETE(id) /api/nationalparks/{id}
+* GET /api/nationalparks
+* GET(id) /api/nationalparks/{id}
+* POST /api/nationalparks
+* PUT(id) /api/nationalparks/{id}
+* DELETE(id) /api/nationalparks/{id}
 
-* Example of search query
+#### Example of search query
 
 http://localhost:5000/api/nationalparks/?name=rainier
 
-* Sample JSON response
+#### Sample JSON response
 
 {
     "nationalParkId": 1,
